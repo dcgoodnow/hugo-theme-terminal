@@ -130,7 +130,7 @@ figure {
 code, kbd {
   font-family: 'Fira Code', Monaco, Consolas, Ubuntu Mono, monospace !important;
   font-feature-settings: normal;
-  background: transparentize($accent, .8);
+  background: transparentize($accent, .9);
   color: $accent;
   padding: 1px 6px;
   margin: 0 2px;
@@ -174,11 +174,12 @@ pre {
 blockquote {
   border-top: 1px solid $accent;
   border-bottom: 1px solid $accent;
-  margin: 40px 0;
-  padding: 25px;
+  margin: 40px 60px;
+  padding: 25px ;
 
   @media ($phone) {
     padding-right: 0;
+    padding-right: 25;
   }
 
   p:first-of-type {
