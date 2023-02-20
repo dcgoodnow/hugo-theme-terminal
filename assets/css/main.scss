@@ -58,6 +58,8 @@ body {
 
 a {
   color: inherit;
+  text-decoration-color: $accent;
+  text-decoration-thickness: 2px;
 
   /* Waiting for a better times... */
   /* &:has(code) {
