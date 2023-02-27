@@ -5,6 +5,11 @@
       {{ range $.Site.Menus.main }}
         {{ if not .HasChildren }}
           <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ else }}
+          <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+          {{ range .Children }}
+            <li class="child"><a href="{{ .URL }}">{{ .Name }}</a></li>
+          {{ end }}
         {{ end }}
       {{ end }}
       {{ if and $.Site.Params.showLanguageSelector (len $.Site.Home.AllTranslations) }}

@@ -70,6 +70,7 @@
   .spacer {
     flex-grow: 1 !important;
   }
+
 }
 
 .menu {
@@ -80,12 +81,22 @@
   padding: 0;
   margin: 0;
 
+  .category {
+    color: white !important;
+    text-decoration: underline;
+    text-decoration-color: $accent;
+    text-decoration-thickness: 2px;
+  }
+
   &__trigger {
     margin-right: 0 !important;
     color: $accent;
     user-select: none;
     cursor: pointer;
+
+    
   }
+
 
   &__dropdown {
     @include menu;
@@ -128,6 +139,7 @@
       @media ($phone) {
         left: auto;
         right: 0;
+        width: 85vw;
       }
     }
 
@@ -136,6 +148,10 @@
 
       &:not(:last-of-type) {
         margin-bottom: 10px;
+      }
+
+      .child {
+        margin-left: 8px;
       }
     }
   }

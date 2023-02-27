@@ -4,6 +4,19 @@
       {{ range first $.Site.Params.showMenuItems $.Site.Menus.main }}
         {{ if not .HasChildren }}
           <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ else }}
+          <li>
+            <ul class="menu menu--desktop ">
+              <li class="menu__trigger category">{{.Name}}&nbsp;▾</li>
+              <li>
+                <ul class="menu__dropdown">
+                  {{ range .Children }}
+                  <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                  {{ end }}
+                </ul>
+              </li>
+            </ul>
+          </li>
         {{ end }}
       {{ end }}
       {{ if gt (len $.Site.Menus.main) $.Site.Params.showMenuItems }}
