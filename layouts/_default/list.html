@@ -4,6 +4,12 @@
       {{ . }}
     </div>
   {{ end }}
+  {{if eq .Type "series" }}
+    <h2>{{ .Title }}</h2>
+    <div class="post-content">
+      {{ .Description }}
+    </div>
+  {{ end }}
   <div class="posts">
     {{ range .Paginator.Pages }}
       <article class="post on-list">
@@ -18,6 +24,9 @@
           {{ end }}
           {{ with .Params.Author }}
             <span class="post-author">{{ . }}</span>
+          {{ end }}
+          {{ if and ( not ( eq $.Type "series" )) .Params.series }}
+            <a href="{{ (urlize (printf "series/%s/" .Params.series )) | absLangURL}}" class="post-series"> :: {{ .Params.series }}</a>
           {{ end }}
         </div>
 

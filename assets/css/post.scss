@@ -35,6 +35,10 @@
     color: transparentize($accent, .3);
   }
 
+  &-series {
+    text-decoration: none;
+  }
+
   &-title {
     $border: 3px dotted $accent;
     position: relative;

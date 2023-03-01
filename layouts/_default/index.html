@@ -29,6 +29,9 @@
           {{ with .Params.Author }}
             <span class="post-author">{{ . }}</span>
           {{ end }}
+          {{ if .Params.series }}
+            <a href="{{ (urlize (printf "series/%s/" .Params.series )) | absLangURL}}" class="post-series"> :: {{ .Params.series }}</a>
+          {{ end }}
         </div>
 
         {{ if .Params.tags }}
