@@ -1,5 +1,7 @@
 html {
   box-sizing: border-box;
+  scrollbar-color: adjust-color($background, $lightness: 20%) $background;
+  scrollbar-width: auto;
 }
 
 *,
@@ -350,4 +352,21 @@ hr {
 
 sup {
  line-height: 0;
+}
+
+::-webkit-scrollbar {
+  width: 1.0em;
+  height: 1.0em;
+}
+
+
+::-webkit-scrollbar-track {
+  display: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: adjust-color($background, $lightness: 20%);
+  border: 6px solid transparent;
+  border-radius: 0.5em;
+  background-clip: content-box;
 }
